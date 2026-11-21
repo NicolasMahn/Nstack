@@ -11,19 +11,17 @@ For a code change, work in stages: tests for the behavior that matters, then the
 
 ## Models
 
-The scores are Nicolas's rough routing signals. Taste means product judgment: the right scope, a simple design, and knowing what not to add.
+The scores are Nicolas's rough routing signals. Clarity means how easy the model's work is to follow: simple code and plain explanations.
 
-| Model | Provider | Intelligence | Taste | Use it for |
+| Model | Provider | Intelligence | Clarity | Use it for |
 |---|---|---:|---:|---|
-| Fable | Claude | 9.5 | 9.5 | Architecture, difficult coding, product and design judgment |
-| Sol | Codex | 8 | 5.5 | Difficult technical coding with a clear brief |
-| Opus | Claude | 7.5 | 8.5 | UI, copy, docs, building where taste matters most |
-| Terra | Codex | 6.5 | 5 | Routine coding with a clear brief |
-| Luna | Codex | 7.5 at max | 4.5 | At max effort: bounded coding, tests, bug fixes. At low: mechanical work only, never coding |
+| Fable | Claude | 9.5 | 9 | Decisions where the answer is unclear |
+| Opus | Claude | 9 | 8.5 | All code generation |
+| Sol | Codex | 8.5 | 5 | Reviews |
 
-Do not use Astra, Sonnet or Haiku. Nicolas does not trust Astra's work at the moment. Sonnet and Haiku cost too much for what they can do.
+For grunt work, use Haiku or Luna. Do not use Astra or Sonnet: Nicolas does not trust Astra's work at the moment, and Sonnet costs too much for what it can do.
 
-Take the newest version of a model, and look its ID up instead of writing one from memory. Match the effort to the task. For a review, use the `council-loop` skill.
+Take the newest version of a model, and look its ID up instead of writing one from memory. Match the effort to the task. Run a review with the `council-loop` skill.
 
 ## Reaching a model
 
@@ -33,7 +31,7 @@ Take the newest version of a model, and look its ID up instead of writing one fr
 
 The other agent does not see this conversation. Write a brief with the goal, the files it owns, the constraints, and what done means. Check the diff and run the tests yourself before you accept its work.
 
-Before giving work to Codex, run `python3 scripts/codex_usage.py` from this skill's folder. It prints what is left of the plan and the current model IDs. When Codex is used up, its work goes to Opus or Fable.
+Before giving work to Codex, run `python3 scripts/codex_usage.py` from this skill's folder. It prints what is left of the plan and the current model IDs. When Codex is used up, a review goes to Opus and grunt work to Haiku.
 
 In T3 Code:
 
