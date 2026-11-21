@@ -62,6 +62,6 @@ The skills are written for me. They say "Nicolas" and name the models I trust, S
 
 [AGENTS.md](AGENTS.md) is the instruction file every agent on my machine reads. It is here as an example, not as something to install. So do not run `install.sh` unless you want my whole setup: it links `AGENTS.md`, the skills, and the tools in `bin/` into the places Claude Code and Codex read, and that makes my instructions yours.
 
-`hetzner` reads the API token from `~/.config/hetzner/api-token` and the account's private details from `~/.config/hetzner/account.env`. Nothing private is in this repo.
+`hetzner` reads the API token from `~/.config/hetzner/api-token` and the account's private details from `~/.config/hetzner/account.env`. `agent-orchestrator` reads the address and key of the local model gateway from `~/.config/local-llm/account.env`. Nothing private is in this repo.
 
 [MIT](LICENSE)

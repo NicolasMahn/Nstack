@@ -40,13 +40,24 @@ In T3 Code:
 
 ## Local models
 
-This PC serves open models through one gateway, [local_llm](https://github.com/NicolasMahn/local_llm), in `~/Projects/local_llm`. They cost only electricity and nothing leaves the machine. They are far weaker than the models above. Never give them coding or judgment work.
+Nicolas's PC serves open models through one gateway, [local_llm](https://github.com/NicolasMahn/local_llm). They cost only electricity and nothing goes to a third party. They are far weaker than the models above. Never give them coding or judgment work.
 
 Use them for many small independent items (summaries, extraction, classification), for data that should stay private, and for speech, pictures and video. Send the requests in parallel: one at a time wastes most of the machine.
 
-`~/Projects/local_llm/llm status` shows what is running, and the table at the top of the project's README says what each model is good at. The API is OpenAI-compatible at `http://localhost:8400/v1` (Anthropic clients: `http://localhost:8400`), with the key from `~/Projects/local_llm/llm key`. `llm up NAME` starts a model. Do not stop one you did not start: Nicolas may be using it.
+The gateway's address and key are in `~/.config/local-llm/account.env`: `LOCAL_LLM_URL` and `LOCAL_LLM_ADMIN_KEY`. Load the file in the command that needs them, and never write the values into a file tracked by git. The API is OpenAI-compatible at `$LOCAL_LLM_URL/v1` (Anthropic clients: `$LOCAL_LLM_URL`).
 
-Called through the API, a model sees only what is in the request. To let one read files and use tools, run it through Pi (`pi -p`). Pi may first need the gateway added as a provider in `~/.pi/agent/models.json`.
+Many models are installed and only a few run at a time. The README of local_llm says what each is good at. The same key lists, starts and stops them:
+
+```sh
+. ~/.config/local-llm/account.env
+curl -H "x-api-key: $LOCAL_LLM_ADMIN_KEY" "$LOCAL_LLM_URL/admin/models"
+curl -X POST -H "x-api-key: $LOCAL_LLM_ADMIN_KEY" "$LOCAL_LLM_URL/admin/models/NAME/start"
+curl -X POST -H "x-api-key: $LOCAL_LLM_ADMIN_KEY" "$LOCAL_LLM_URL/admin/models/NAME/stop"
+```
+
+A start answers `202` at once and then takes minutes. The list shows when the model is `live`, or in `failed_job` why it did not start. When it does not fit in memory, use a model that is already running. Stop only a model you started: Nicolas may be using the others.
+
+Called through the API, a model sees only what is in the request. To let one read files and use tools, run it through Pi: in T3 Code, `delegate_task` with the provider `pi`. Pi may need to be configured on the fly, because it offers only the local models listed in `~/.pi/agent/models.json`. Add the one you need there. T3 Code picks the change up within about five minutes.
 
 ## OpenRouter
 
