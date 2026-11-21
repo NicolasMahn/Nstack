@@ -31,8 +31,6 @@ Take the newest version of a model, and look its ID up instead of writing one fr
 
 The other agent does not see this conversation. Write a brief with the goal, the files it owns, the constraints, and what done means. Check the diff and run the tests yourself before you accept its work.
 
-Before giving work to Codex, run `python3 scripts/codex_usage.py` from this skill's folder. It prints what is left of the plan and the current model IDs. When Codex is used up, a review goes to Opus and grunt work to Haiku.
-
 In T3 Code:
 
 - There is no read-only switch. For a review or a plan, write "Do not edit files" in the brief and check `git status` afterwards.
