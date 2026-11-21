@@ -1,0 +1,4 @@
+interface:
+  display_name: "Council Loop"
+  short_description: "Review with Sol and Opus in rounds until they approve"
+  default_prompt: "Use $council-loop to review this change until the council approves."

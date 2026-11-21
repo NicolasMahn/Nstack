@@ -1,0 +1,30 @@
+#!/bin/sh
+# This repo is public. Refuse a commit that would publish something private:
+# the email from the global git config, or a value kept in a
+# ~/.config/<service>/account.env file.
+set -eu
+
+private_email=$(git config --global user.email || true)
+
+if [ -n "$private_email" ] && [ "$(git config user.email)" = "$private_email" ]; then
+  echo "pre-commit: this commit would be authored with the private email." >&2
+  echo "Set the public one for this repo: git config user.email <GitHub noreply address>" >&2
+  exit 1
+fi
+
+# A path is reduced to its file name, so a key file is caught however its path is written.
+values=$({
+  echo "$private_email"
+  cat "$HOME"/.config/*/account.env 2>/dev/null | sed -n 's/^[A-Z_]*=//p' | tr -d '"' | sed 's|.*/||'
+} || true)
+
+added=$(git diff --cached -U0 | grep '^+' || true)
+
+echo "$values" | while IFS= read -r value; do
+  [ -n "$value" ] || continue
+  if printf '%s\n' "$added" | grep -qF -- "$value"; then
+    echo "pre-commit: the staged changes contain a private value from ~/.config or the private email." >&2
+    echo "Take it out. Private values belong in ~/.config/<service>/account.env." >&2
+    exit 1
+  fi
+done

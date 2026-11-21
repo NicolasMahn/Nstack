@@ -1,0 +1,4 @@
+interface:
+  display_name: "Finalize Feature"
+  short_description: "Prove and council-review a PR, merge fixes, hold additions for Nicolas"
+  default_prompt: "Use $finalize-feature to finish this. I am not watching this thread."

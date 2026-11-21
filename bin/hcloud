@@ -1,0 +1,9 @@
+#!/bin/sh
+# Agents run in shells that may not load the user's profile, so the token comes
+# from one file instead of an environment variable or a second copy in hcloud's
+# own config. Rotating the token means replacing that file, nothing else.
+if [ -z "$HCLOUD_TOKEN" ]; then
+  HCLOUD_TOKEN=$(cat "$HOME/.config/hetzner/api-token") || exit 1
+  export HCLOUD_TOKEN
+fi
+exec "$HOME/.local/opt/hcloud/hcloud" "$@"
