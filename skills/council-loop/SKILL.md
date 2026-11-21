@@ -1,6 +1,6 @@
 ---
 name: council-loop
-description: Review a change with a council of models from different providers, in rounds, until they all approve. Use when Nicolas says "council", "council loop", "sol loop", or asks for a review loop, and as the review step of finalize-feature.
+description: Review a change with a council of models from different providers, in rounds, until they all approve. Use when Nicolas says "council", "council loop", "loop", or asks for a review loop, and as the review step of finalize-feature.
 ---
 
 # Council loop
