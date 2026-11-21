@@ -4,6 +4,15 @@
 
 Works in Claude Code and Codex, and uses [T3 Code](https://github.com/pingdotgg/t3code) features where they exist. Largely inspired by [tstack](https://github.com/t3dotgg/tstack) by Theo Browne.
 
+## Skills
+
+| Skill | Say | What it does |
+|---|---|---|
+| `finalize-feature` | "finalize feature" | Takes a change to a tested, reviewed pull request. Merges fixes, holds additions for you. |
+| `council-loop` | "council", "sol loop" | Two models from two companies review a change in rounds until both approve. |
+| `modernize` | "modernize" | Rebases an old pull request and says honestly whether it should still exist. This one is Theo's, almost unchanged. |
+| `hetzner` | (automatic) | Manages a Hetzner account with the `hcloud` CLI, and asks before anything that deletes or costs money. |
+
 ## The idea
 
 > Fixes go through. Additions wait for a person.
@@ -34,15 +43,6 @@ A fix ends quietly: merged, branch deleted, thread closed. A held addition ends 
 > Held because it adds something new to the screen. Tested on the emulator, approved by the council in 2 rounds, checks green.
 >
 > Do we want this?
-
-## Skills
-
-| Skill | Say | What it does |
-|---|---|---|
-| `finalize-feature` | "finalize feature" | Takes a change to a tested, reviewed pull request. Merges fixes, holds additions for you. |
-| `council-loop` | "council", "sol loop" | Two models from two companies review a change in rounds until both approve. |
-| `modernize` | "modernize" | Rebases an old pull request and says honestly whether it should still exist. This one is Theo's, almost unchanged. |
-| `hetzner` | (automatic) | Manages a Hetzner account with the `hcloud` CLI, and asks before anything that deletes or costs money. |
 
 ## Install
 
