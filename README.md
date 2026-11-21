@@ -11,6 +11,8 @@ Works in Claude Code and Codex, and uses [T3 Code](https://github.com/pingdotgg/
 | `finalize-feature` | "finalize feature" | Takes a change to a tested, reviewed pull request. Merges fixes, holds additions for you. |
 | `council-loop` | "council", "sol loop" | Two models from two companies review a change in rounds until both approve. |
 | `modernize` | "modernize" | Rebases an old pull request and says honestly whether it should still exist. This one is Theo's, almost unchanged. |
+| `agent-orchestrator` | (automatic) | Says which model gets which job, and how to hand work to Claude, Codex, local models and OpenRouter. |
+| `codex-threads` | (automatic) | Runs Codex from Claude Code in the background, with progress, timeouts and resume. |
 | `hetzner` | (automatic) | Manages a Hetzner account with the `hcloud` CLI, and asks before anything that deletes or costs money. |
 
 ## The idea
@@ -56,7 +58,7 @@ You need an authenticated [GitHub CLI](https://cli.github.com). `council-loop` n
 
 ## Make it yours
 
-The skills are written for me. They say "Nicolas" and name the models I trust, Sol and Opus. Change both.
+The skills are written for me. They say "Nicolas" and name the models I trust, Sol and Opus. Change both. `agent-orchestrator` holds my own scores for the models and points at my [local model gateway](https://github.com/NicolasMahn/local_llm). Put in yours.
 
 [AGENTS.md](AGENTS.md) is the instruction file every agent on my machine reads. It is here as an example, not as something to install. So do not run `install.sh` unless you want my whole setup: it links `AGENTS.md`, the skills, and the tools in `bin/` into the places Claude Code and Codex read, and that makes my instructions yours.
 

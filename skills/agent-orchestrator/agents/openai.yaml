@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Orchestrator"
+  short_description: "Pick the model for each job and hand the work over"
+  default_prompt: "Use $agent-orchestrator to split this work across the right models."
