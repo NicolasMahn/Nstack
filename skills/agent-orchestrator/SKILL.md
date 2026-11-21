@@ -40,11 +40,13 @@ In T3 Code:
 
 ## Local models
 
-This PC serves open models through one gateway, [local_llm](https://github.com/NicolasMahn/local_llm), in `~/Projects/local_llm`. They cost only electricity and nothing leaves the machine. They are far weaker than the models above and cannot see the repo or use tools. Never give them coding or judgment work.
+This PC serves open models through one gateway, [local_llm](https://github.com/NicolasMahn/local_llm), in `~/Projects/local_llm`. They cost only electricity and nothing leaves the machine. They are far weaker than the models above. Never give them coding or judgment work.
 
 Use them for many small independent items (summaries, extraction, classification), for data that should stay private, and for speech, pictures and video. Send the requests in parallel: one at a time wastes most of the machine.
 
 `~/Projects/local_llm/llm status` shows what is running, and the table at the top of the project's README says what each model is good at. The API is OpenAI-compatible at `http://localhost:8400/v1` (Anthropic clients: `http://localhost:8400`), with the key from `~/Projects/local_llm/llm key`. `llm up NAME` starts a model. Do not stop one you did not start: Nicolas may be using it.
+
+Called through the API, a model sees only what is in the request. To let one read files and use tools, run it through Pi (`pi -p`). Pi may first need the gateway added as a provider in `~/.pi/agent/models.json`.
 
 ## OpenRouter
 
