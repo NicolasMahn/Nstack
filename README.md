@@ -15,7 +15,7 @@ The idea behind `finalize-feature`: a model is good at making a broken thing wor
 
 [AGENTS.md](AGENTS.md) is the instruction file every agent on my machine reads. It is here as an example, not as something to install.
 
-To install, copy the folders in `skills/` to `~/.claude/skills/` for Claude Code or `~/.agents/skills/` for Codex. `finalize-feature` needs `council-loop`. Do not run `install.sh` unless you want my whole setup: it also links my `AGENTS.md` as your global instructions.
+To install, copy the folders in `skills/` to `~/.claude/skills/` for Claude Code or `~/.agents/skills/` for Codex. `finalize-feature` needs `council-loop`. Do not run `install.sh` unless you want my whole setup. It links `AGENTS.md`, the skills, and the tools in `bin/` into the places Claude Code and Codex read, so both use the same files, and that makes my `AGENTS.md` your global instructions.
 
 `hetzner` reads the API token from `~/.config/hetzner/api-token` and the account's private details from `~/.config/hetzner/account.env`. Nothing private is in this repo.
 

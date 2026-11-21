@@ -30,6 +30,4 @@ Manage git and GitHub as you see fit: branch, commit, push, pull, and open pull 
 
 # Shared agent setup
 
-`~/agents` is the one place for instructions, skills, and helper tools that every agent on this machine uses. `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, and the linked skills are symlinks into it, so edit the files in `~/agents`, commit the change there, and run `~/agents/install.sh` after adding or removing a skill or tool. Never commit secrets. API keys live in `~/.config/<service>/`; website passwords live in the GNOME keyring (`secret-tool lookup service <service>-console ...`).
-
-Hetzner Cloud is always available: `hcloud` is installed and authenticated. Read the `hetzner` skill (`~/agents/skills/hetzner/SKILL.md`) before changing anything there.
+Instructions and skills for every agent on this machine live in `~/agents`. Edit them there, commit, and run `~/agents/install.sh` after adding or removing a skill. Secrets never go into a repo: API keys live in `~/.config/<service>/`, website passwords in the GNOME keyring (`secret-tool lookup service <service>-console ...`).
