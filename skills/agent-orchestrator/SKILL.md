@@ -27,7 +27,6 @@ Take the newest version of a model, and look its ID up instead of writing one fr
 
 - **Your own provider:** your native subagent tool.
 - **The other provider, or when the effort level matters:** `delegate_task` in T3 Code.
-- **Codex from Claude Code outside T3 Code:** the `codex-threads` skill.
 
 The other agent does not see this conversation. Write a brief with the goal, the files it owns, the constraints, and what done means. Check the diff and run the tests yourself before you accept its work.
 

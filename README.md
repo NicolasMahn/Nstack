@@ -12,7 +12,6 @@ Works in Claude Code and Codex, and uses [T3 Code](https://github.com/pingdotgg/
 | `council-loop` | "council", "loop" | Two models from two companies review a change in rounds until both approve. |
 | `modernize` | "modernize" | Rebases an old pull request and says honestly whether it should still exist. This one is Theo's, almost unchanged. |
 | `agent-orchestrator` | (automatic) | Says which model gets which job, and how to hand work to Claude, Codex, local models and OpenRouter. |
-| `codex-threads` | (automatic) | Runs Codex from Claude Code in the background, with progress, timeouts and resume. |
 | `hetzner` | (automatic) | Manages a Hetzner account with the `hcloud` CLI, and asks before anything that deletes or costs money. |
 
 ## The idea

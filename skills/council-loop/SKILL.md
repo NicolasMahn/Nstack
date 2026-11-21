@@ -34,7 +34,7 @@ The change is base to working tree, including untracked files. Use the same diff
 
 ## A round
 
-In T3 Code, start one `delegate_task` per member, in parallel: `role: "review"`, `mode: "async"`, a new `clientRequestId` each round. Every round, including a follow-up, is a new `delegate_task`, never `t3_thread_send`. Outside T3, use the Agent tool for Claude members and the `codex-threads` skill (`cx run --sandbox read-only`) for Codex members.
+In T3 Code, start one `delegate_task` per member, in parallel: `role: "review"`, `mode: "async"`, a new `clientRequestId` each round. Every round, including a follow-up, is a new `delegate_task`, never `t3_thread_send`. Outside T3 Code you can only reach your own provider: run with that member alone and say so.
 
 Round 1 brief. Children see none of this conversation, so the brief carries everything:
 
