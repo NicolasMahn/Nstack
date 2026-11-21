@@ -26,7 +26,7 @@ Use ISO 8601 for dates and times.
 
 # Git and GitHub
 
-Manage git and GitHub as you see fit: branch, commit, push, pull, and open pull requests. Tell me which branch or pull request the work is on. To merge, use the `finalize-feature` skill.
+Manage git and GitHub as you see fit: branch, commit, push, pull, and open pull requests. To merge, use the `finalize-feature` skill.
 
 # Shared agent setup
 
