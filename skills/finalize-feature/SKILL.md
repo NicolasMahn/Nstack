@@ -78,3 +78,5 @@ Decide everything else yourself, and list those decisions in the report. Stop on
 ## Report
 
 For a merged change: the PR link and merge commit, what the merge started, why it needed no hold, how you proved it, the council result, your decisions, found work, and the risks that remain. Say plainly what is left open, or that nothing is.
+
+Then settle the thread if it is done for him. In T3 Code, call `t3_thread_organize` with `action: "settle"` when the change is merged, the branch is gone, and the report holds nothing he has to do, decide, or know. A fix that is simply fixed should not sit in his inbox. Leave the thread open when there is found work, a risk he should hear about, or a decision of yours he might not share, and always after a held merge or a stop. Only the thread that owns the work settles itself. A council member or other delegate never does.
