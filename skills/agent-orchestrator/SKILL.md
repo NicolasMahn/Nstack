@@ -68,7 +68,7 @@ For images, draft with the newest Gemini Flash image model, then render the chos
 
 ### Writing in a voice
 
-Kimi K2 writes any text that has to sound like a person or a character: a social media post, or the lines a character speaks. The models in the table write clearly, and that is the problem here: their posts read like a fact sheet or like an ad. Nicolas rejected three of them and posted Kimi's.
+Kimi K2 writes any text that has to sound like a person or a character: a social media post, or the lines a character speaks. The models in the table write clearly, and that is the problem here: their posts read like a fact sheet or like an ad.
 
 A capable frontier agent (Fable or Opus) steers Kimi and does not write the text itself:
 
@@ -76,7 +76,7 @@ A capable frontier agent (Fable or Opus) steers Kimi and does not write the text
 - **Check every line for truth.** Kimi writes claims that sound right and are not.
 - **Show the takes as Kimi wrote them.** Name what is false or missing next to them. Change only what is false, and do not smooth the rest into your own voice.
 
-Reach it with `delegate_task`, provider `pi`, and tell it to write only: no commands, no files. The post Nicolas picked came from `openrouter/moonshotai/kimi-k2-0905`. Stay on K2 until he asks for another Kimi.
+Reach it with `delegate_task`, provider `pi`, and tell it to write only: no commands, no files. Use `openrouter/moonshotai/kimi-k2-0905`, and stay on K2 until Nicolas asks for another Kimi.
 
 ## Handoff
 
