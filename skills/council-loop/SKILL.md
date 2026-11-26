@@ -18,8 +18,6 @@ Use the members Nicolas names. Otherwise:
 
 Two members from two companies is the point: each catches what the other's training misses. "sol loop" means Sol alone. Look up the model IDs with `orchestrator_capabilities` (add `search` for models it leaves out). Never hard-code an ID. If you are one of the named models yourself, a fresh delegate of the same model still counts, because it does not share your context.
 
-When Nicolas names Neon as a member, run it with `agy` as the `agent-orchestrator` skill describes: one run per round.
-
 If a member cannot run, say so. Do not swap in another model. If Codex is out of usage, run with Opus alone and say in the report that Sol did not review.
 
 ## Before round 1

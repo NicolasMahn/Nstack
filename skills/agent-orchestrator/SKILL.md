@@ -18,7 +18,7 @@ The scores are Nicolas's rough routing signals. Clarity means how easy the model
 | Fable | Claude | 9.5 | 9 | Decisions where the answer is unclear |
 | Opus | Claude | 9 | 8.5 | All code generation |
 | Sol | Codex | 8.5 | 5 | Reviews |
-| Neon | Google | – | – | On trial: reviews, when Nicolas names it |
+| Neon | Antigravity | – | – | On trial: reviews, when Nicolas names it |
 
 For grunt work, use Haiku or Luna. Do not use Astra or Sonnet: Nicolas does not trust Astra's work at the moment, and Sonnet costs too much for what it can do.
 
@@ -28,7 +28,6 @@ Take the newest version of a model, and look its ID up instead of writing one fr
 
 - **Your own provider:** your native subagent tool.
 - **The other provider, or when the effort level matters:** `delegate_task` in T3 Code.
-- **Neon:** Google's `agy` command (below).
 
 The other agent does not see this conversation. Write a brief with the goal, the files it owns, the constraints, and what done means. Check the diff and run the tests yourself before you accept its work.
 
@@ -38,21 +37,7 @@ In T3 Code:
 - `isolation: "worktree"` starts from the last commit, so commit first.
 - Leave `serviceTier` at its default unless Nicolas asks for speed.
 - The result names the provider, model and options that really ran. Check them.
-
-### Neon
-
-Neon runs through Google's command-line tool `agy`, on Nicolas's Google AI Pro plan. The plan's allowance is small, so spend it on the job at hand.
-
-```sh
-agy -p "$(cat brief.md)" --model gemini-4-neon-high --mode plan \
-  --add-dir "$BRIEF_DIR" --output-format json --print-timeout 15m
-```
-
-- Run it from the repo's folder. The answer is the `response` field of the JSON.
-- `agy models` lists the model IDs. The effort is the end of the ID: `-low`, `-medium`, `-high` or `-xhigh`.
-- A run started this way cannot ask for permission. When Neon tries a shell command, the run ends with no answer. So for a review, write the diff to a file outside the repo (`git diff <base> > "$BRIEF_DIR/review.diff"`), pass that folder with `--add-dir`, and say in the brief to read files with its file tools and to run no commands.
-- `--mode plan` is for a review or a plan. Still write "Do not edit files" in the brief and check `git status` afterwards.
-- If it answers that it needs authentication, Nicolas has to sign in again: he runs `agy` once.
+- Neon runs on the provider `antigravity`, which uses Nicolas's Google AI Pro plan. Its effort option is `thought_level`. The plan's allowance is small, so spend it on the job at hand. If the provider says it is not signed in, Nicolas has to run `agy` once.
 
 ## Local models
 
