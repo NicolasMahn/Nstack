@@ -93,7 +93,7 @@ Nicolas's Google AI Pro plan includes tools that exist only as web pages. Use th
 Images in the Gemini app are tested. The other tools open signed in and are untested; music failed on its first two tries with Gemini's own error.
 
 - T3 Code's browser draws a page only when a screenshot is taken. After a click, take a `preview_snapshot` with `save: true` before you look for what the click opened.
-- Save a result with its download button. `preview_status` then lists the file's path under `downloads`.
+- Save a result with its download button. `preview_status` then lists the file's path under `downloads`. Copy the file to where it belongs before you close the tab: closing the tab deletes it.
 - Each request leaves a chat in Nicolas's Gemini history. Say in the handoff which ones you made.
 
 ## Handoff
