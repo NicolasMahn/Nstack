@@ -17,8 +17,8 @@ The scores are Nicolas's rough routing signals. Clarity means how easy the model
 |---|---|---:|---:|---|
 | Fable | Claude | 9.5 | 9 | Decisions where the answer is unclear |
 | Opus | Claude | 9 | 8.5 | All code generation |
+| Neon | Antigravity | 9 | 9.5 | Reviews. Its exact strengths are still to be discovered |
 | Sol | Codex | 8.5 | 5 | Reviews |
-| Neon | Antigravity | – | – | On trial: reviews, as a council member |
 
 For grunt work, use Haiku or Luna. Do not use Astra or Sonnet: Nicolas does not trust Astra's work at the moment, and Sonnet costs too much for what it can do.
 

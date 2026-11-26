@@ -15,7 +15,7 @@ Use the members Nicolas names. Otherwise:
 
 - **Sol**, the newest `gpt-*-sol` on Codex, effort `xhigh`. It finds bugs and broken callers.
 - **Opus**, the newest `claude-opus-*` on Claude, effort `xhigh`. It judges design, scope, and taste.
-- **Neon**, the newest `gemini-*-neon` on Antigravity, `thought_level` `high`. On trial: a second bug finder, from a third company.
+- **Neon**, the newest `gemini-*-neon` on Antigravity, `thought_level` `high`. A second bug finder, from a third company.
 
 Members from different companies is the point: each catches what the others' training misses. "sol loop" means Sol alone. Look up the model IDs with `orchestrator_capabilities` (add `search` for models it leaves out). Never hard-code an ID. If you are one of the named models yourself, a fresh delegate of the same model still counts, because it does not share your context.
 
