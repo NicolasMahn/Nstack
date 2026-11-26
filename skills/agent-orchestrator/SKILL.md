@@ -80,6 +80,22 @@ A capable frontier agent (Fable or Opus) steers Kimi and does not write the text
 
 Reach it with `delegate_task`, provider `pi`, and tell it to write only: no commands, no files. Use `openrouter/moonshotai/kimi-k2-0905`, and stay on K2 until Nicolas asks for another Kimi.
 
+## Google's web tools
+
+Nicolas's Google AI Pro plan includes tools that exist only as web pages. Use them through T3 Code's browser, which is signed in to his Google account. They cost nothing beyond the plan, within its allowance.
+
+| Tool | Address | What it makes |
+|---|---|---|
+| Gemini app | `gemini.google.com/app` | Images, video, music and Deep Research reports. Pick the tool in the "+" menu next to the prompt |
+| Flow | `flow.google.com` | Video and images, on monthly credits |
+| AI Studio | `aistudio.google.com` | Speech, and trying a model by hand |
+
+Images in the Gemini app are tested. The other tools open signed in and are untested; music failed on its first two tries with Gemini's own error.
+
+- T3 Code's browser draws a page only when a screenshot is taken. After a click, take a `preview_snapshot` with `save: true` before you look for what the click opened.
+- Save a result with its download button. `preview_status` then lists the file's path under `downloads`.
+- Each request leaves a chat in Nicolas's Gemini history. Say in the handoff which ones you made.
+
 ## Handoff
 
 Say which agents, local models and OpenRouter calls you used, and what they cost.
